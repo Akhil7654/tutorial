@@ -1,0 +1,49 @@
+
+<div class="container" >
+    <div class="row g-3">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div>
+              <h3 align="center">
+                <small class="text-muted">Add Loan</small>
+              </h3>
+              <hr>
+              <div>
+              <div class="card border-secondary mb-3" style="width:500px">
+                <div class="card-body" >
+           
+           
+             
+                <form #dloan="ngForm" (ngSubmit)="Addloan()">
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="form-label">Name</label>
+                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="loan.name">
+                  </div>
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="label">Amount</label>
+                    <input id="Name"  class="form-control" type="text" name="namefield" [(ngModel)]="loan.amount">
+                  </div>
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="label">Interest</label>
+                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="loan.interest">
+                  </div>
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="label">Re Payment Period</label>
+                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="loan.period">
+                  </div>
+                
+                <div class="group">
+                  <br>
+                  <button class="btn btn-primary">SUBMIT</button>
+                </div>
+                
+                </form>
+              </div>
+            </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+           
+                        
+        

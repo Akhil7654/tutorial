@@ -14,7 +14,6 @@ export class DriverComponent implements OnInit {
   email:"",
   driverId:"",
   busId:""
-
   }
 
   constructor(private api:ApiService) { 
@@ -53,8 +52,6 @@ export class DriverComponent implements OnInit {
     )
 
   }
-
-
-
+  
   data:any=[]
 }

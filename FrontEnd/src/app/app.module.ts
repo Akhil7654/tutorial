@@ -18,6 +18,10 @@ import { AdddriverComponent } from './admin/adddriver/adddriver.component';
 import { ComplaintComponent } from './pages/complaint/complaint.component';
 import { FooterComponent } from './sharepage/navbar/footer/footer.component';
 import { RouteadminComponent } from './admin/routeadmin/routeadmin.component';
+import { AdminhomeComponent } from './adminhome/adminhome.component';
+import { AddloanComponent } from './addloan/addloan.component';
+import { LoanlistComponent } from './loanlist/loanlist.component';
+
 
 
 
@@ -36,6 +40,9 @@ import { RouteadminComponent } from './admin/routeadmin/routeadmin.component';
     ComplaintComponent,
     FooterComponent,
     RouteadminComponent,
+    AdminhomeComponent,
+    AddloanComponent,
+    LoanlistComponent,
   ],
   imports: [
     BrowserModule,

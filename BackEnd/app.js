@@ -5,7 +5,8 @@ const Cors=require("cors")
 const {register}=require("./src/model/studRegister")
 const {dregister}=require("./src/model/driverRegister")
 const {routeDetails}=require("./src/model/routeDetails")
-const { complaint } = require("./src/model/complaint")
+const {dloan}=require("./src/model/loan")
+
 
 
 const app=Express()
@@ -224,33 +225,38 @@ app.post("/addRoute",(req,res)=>{
 })
 
 
-//complaints
 
-app.get("/viewComplaint",(req,res)=>{
-    
-    complaint.find(
+
+
+
+
+// LOAN
+
+
+app.get("/viewLoan",(req,res)=>{
+    dloan.find(
         (error,data)=>{
             if(error){
                 res.send(error)
                 
             }
             else{
-                console.log(data)
                 res.send(data)
             }
         }
     )
 })
 
-app.post("/addComplaint",(req,res)=>{
+
+
+app.post("/addLoan",(req,res)=>{
     const data=req.body
     console.log(data)
-    const ob=new complaint(data)
+    const ob=new dloan(data)
     ob.save(
         (error,data)=>{
             if(error){
                 res.send(error)
-                console.log(error)
             }
             else{
                 res.send(data)
@@ -258,6 +264,54 @@ app.post("/addComplaint",(req,res)=>{
         }
     )
 })
+
+
+app.delete('/deleteLoan/:id',function(req,res){
+    const id = req.params.id;
+    dloan.findByIdAndDelete(id,(error,data)=>{
+       if(error){
+        res.send(error)
+       }else{
+        res.status(200).json({
+            msg:data
+        })
+       }
+    })
+})
+
+
+
+app.put('/updateLoan/:id',function(req,res){
+    
+    const id = req.params.id,
+    name=req.body.name,
+    amount=req.body.amount,
+    interest=req.body.interest,
+    period=req.body.period
+
+    dloan.findByIdAndUpdate({"_id":id},
+    {$set:{"name":name,
+    "amount":amount,
+    "interest":interest,
+    "period":period
+
+}}).then(function(){
+    dloan.find(
+        (error,data)=>{
+            if(error){
+                res.send(error)
+                
+            }
+            else{
+                res.status(200).json({
+                    msg:data
+                })
+            }
+        }
+    )})
+  })
+
+
 
 
 

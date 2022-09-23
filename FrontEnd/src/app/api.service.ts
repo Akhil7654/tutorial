@@ -57,5 +57,20 @@ export class ApiService {
   viewcomplaint=()=>{
     return this.http.get<any>("http://localhost:3000/viewComplaint")
   }
+
+  //LOAN
+  
+  addloan=(loan:any)=>{
+    return this.http.post<any>("http://localhost:3000/addLoan",loan)
+  }
+  viewloan=()=>{
+    return this.http.get<any>("http://localhost:3000/viewLoan")
+  }
+  deleteloan=(id:any)=>{
+    return this.http.delete<any>("http://localhost:3000/deleteLoan/"+id)
+  }
+  updateloan=(loan:any)=>{
+    return this.http.put<any>("http://localhost:3000/updateLoan/"+loan._id,loan)
+  }
 }
 

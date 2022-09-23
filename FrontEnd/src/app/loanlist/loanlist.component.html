@@ -1,0 +1,88 @@
+
+<div class="main">
+    <div class="container">
+      <div class="row ">
+          <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 g-3 ">
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+                  <div class="card text-center " >
+                      <div class="card-body ">
+                        <div class="table-responsive">
+                          
+                          <table class="table">
+                              <thead class="table-secondary">
+                                <tr>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Amount</th>
+                                  <th scope="col">Interest</th>
+                                  <th scope="col">Re Payment Period</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let i of data">
+                                  <th scope="row">
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="name" class="form-control" [(ngModel)]="i.name">
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.name}}
+                                    </div>
+                                  </th>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="amt" class="form-control" [(ngModel)]="i.amount">
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.amount}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="number" class="form-control" [(ngModel)]="i.interest"  >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.interest}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="period" class="form-control" [(ngModel)]="i.period" >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.period}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="!i.isEdit">
+                                      <table class="g-3">
+                                        <tr>
+                                          <td><button class="btn btn-primary" (click)="onEdit(i)">Edit</button></td>
+                                          &nbsp;
+                                          <td><button class="btn btn-danger"  (click)="Deleteloan(i)">Delete</button></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                    <div *ngIf="i.isEdit">
+                                      <table class="g-3">
+                                        <tr>
+                                          <td><button class="btn btn-primary" (click)="Updateloan(i)">save</button></td>
+                                          &nbsp;
+                                          <td> <button class="btn btn-danger" (click)="i.isEdit = false">cancel</button></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                    
+                                  
+                                  </td>
+                                  
+                                </tr>
+                              </tbody>
+                          </table>
+                        
+                        </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>

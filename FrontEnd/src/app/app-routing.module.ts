@@ -10,12 +10,16 @@ import { DriverComponent } from './admin/driver/driver.component';
 import { AdddriverComponent } from './admin/adddriver/adddriver.component';
 import { ComplaintComponent } from './pages/complaint/complaint.component';
 import { RouteadminComponent } from './admin/routeadmin/routeadmin.component';
+import { AddloanComponent } from './addloan/addloan.component';
+import { LoanlistComponent } from './loanlist/loanlist.component';
 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'account',component:AccountComponent},
+  {path:'addloan',component:AddloanComponent},
+  {path:'viewloan',component:LoanlistComponent},
   {path:'route',component:RoutedetailsComponent},
   {path:'admin',component:SidebarComponent},
   {path:'student',component:StudentComponent},
